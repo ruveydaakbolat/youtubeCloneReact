@@ -6,9 +6,9 @@ const options = {
         lang: 'tr'
     },
     headers: {
-      'X-RapidAPI-Key': 'b9c62e627amsh1f711f5429861eep17f6dejsnabd624c5e57e',
-      'X-RapidAPI-Host': 'yt-api.p.rapidapi.com'
-    }
+        'X-RapidAPI-Key': 'cec29dc189mshb50c096c637d074p1feff5jsn7f6c85d563b6',
+        'X-RapidAPI-Host': 'yt-api.p.rapidapi.com'
+      }
 };
 
 axios.defaults.baseURL = 'https://yt-api.p.rapidapi.com';

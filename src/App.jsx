@@ -10,7 +10,7 @@ function App() {
     <Header />
       <Routes>
         <Route path="/" element={<Feed />} />
-        <Route path="/watch" element={<VideoDetail />} />
+        <Route path="/watch/:id" element={<VideoDetail />} />
         <Route path="/results" element={<SearchResults />} />
       </Routes>
     </BrowserRouter>

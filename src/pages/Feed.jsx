@@ -8,11 +8,11 @@ const Feed = () => {
   const { videos } = useContext(YoutubeContext);
   console.log(videos);
   return (
-    <div className="flex gap-3">
+    <div className="flex gap-s3">
       <SideBar />
         <div className="videos">
           {!videos ? (
-            <Loading />
+            <Loading type={"video"}/>
           ) : (
             videos.map((item) => (
               item.type === "video" && <VideoCard video={item} key={item.videoId} />
