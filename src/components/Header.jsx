@@ -1,7 +1,14 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineSearch, AiFillBell, AiFillVideoCamera } from "react-icons/ai";
 
 const Header = () => {
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const text = e.target[0].value;
+    navigate(`/results?search_query=${text}`)
+  }
   return (
     <header className="flex justify-between items-center p-4">
       <Link className="flex items-center gap-[10px]">
@@ -9,7 +16,7 @@ const Header = () => {
         <h1 className="text-2xl max-md:hidden">Youtube</h1>
       </Link>
 
-      <form className="flex items-center border border-gray-400 rounded-[20px]">
+      <form onSubmit={handleSubmit} className="flex items-center border border-gray-400 rounded-[20px]">
         <input
           placeholder="Ara"
           className="bg-black outline-none rounded-[20px] px-3 py-1"
