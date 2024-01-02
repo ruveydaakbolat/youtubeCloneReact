@@ -11,7 +11,7 @@ const Header = () => {
   }
   return (
     <header className="flex justify-between items-center p-4">
-      <Link className="flex items-center gap-[10px]">
+      <Link to="/" className="flex items-center gap-[10px]">
         <img width={50} src="/youtube-logo.png" alt="" />
         <h1 className="text-2xl max-md:hidden">Youtube</h1>
       </Link>

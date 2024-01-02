@@ -7,20 +7,24 @@ import StringArea from "./StringArea";
 import { millify } from 'millify';
 import moment from "moment/moment";
 import "moment/locale/tr";
+import Comments from "./Comments";
 
 const VideoInfo = () => {
   const { id } = useParams();
   const [detail, setDetail] = useState(null);
   const [channel, setChannel] = useState(null);
+  const [comments, setComments] = useState(null);
 
   const getInfos = async () => {
     const detailRes = await getData(`/video/info?id=${id}`);
     const channelRes = await getData(
       `/channel/about?id=${detailRes.data.channelId}`
     );
+    const commentsRes = await getData(`/comments?id=${id}`);
 
     setDetail(detailRes.data);
     setChannel(channelRes.data);
+    setComments(commentsRes.data.data)
   };
 
   useEffect(() => {
@@ -60,6 +64,8 @@ const VideoInfo = () => {
             </div>
         <StringArea text={detail.description} max={300} />
         </div>
+
+        <Comments comments={comments} />
     </>
   );
 };
